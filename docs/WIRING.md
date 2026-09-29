@@ -12,6 +12,7 @@ Every cable in the CAD assembly is modelled end to end, from a real pad or conne
 | 6 | Camera MIPI | Blue | VTX MIPI port → HDZero Micro V2 | HDZero MIPI ribbon, 250 mm | About 152 mm of route plus slack, forward into the nose cradle. Keep it away from the motor leads. |
 | 7 | GPS | Cyan | Micro M10 (nose) → FC pads | JST-GH 6-pin at the GPS, soldered at the FC: 5 V, GND, TX3, RX3, SCL, SDA | The GPS sits in the nose cone above the camera, screwed through the bulkhead. The cable runs aft along the canopy side. `SERIAL3_PROTOCOL = 5`, `GPS_TYPE = 2`. |
 | 8 | ELRS receiver | Green | RX (beside the battery, −X side) → FC UART6 pads | 4 × 28 AWG: 5 V, GND, RX-TX → **R6**, RX-RX → **T6** | Short run forward to the stack. The 2.4 GHz T-antenna lies along the body axis on the bottom skin, away from the video antenna. `SERIAL6_PROTOCOL = 23`, `RSSI_TYPE = 3`. |
+| 9 | Airspeed sensor | (not in CAD yet) | Matek ASPD-4525 → FC I²C pads | JST-GH 4-pin: 5 V, GND, SCL, SDA (shared with the GPS compass bus) | Mount the board inside the nose bay. Run the silicone tubes to a pitot tube that pokes forward through a canard leading edge or the nose-to-body joint, **out of the prop wash and at least 20 mm ahead of the local surface**. `ARSPD_TYPE = 1`. |
 
 ## Notes
 

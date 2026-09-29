@@ -1,13 +1,15 @@
-# Rocket VTOL FPV — ArduPlane starter parameters
-# Target firmware: ArduPlane 4.5.x or newer, board "KakuteH7" (Holybro Kakute H7 v1.3)
-# Airframe: copter tail-sitter (4 motors, no control surfaces), 6S, 7" props
+# Kārearea VTOL tail-sitter: ArduPlane starter parameters
+# Target firmware: ArduPlane 4.5.x or newer, board "KakuteH7" (Holybro Kakute H7 v1.3+)
+# Airframe: copter tail-sitter (4 motors, no control surfaces), 6S, 7" props (5-6" pitch)
+# Design goal: 200 km/h (about 56 m/s) in forward flight
 #
-# !!! STARTER VALUES — NOT FLIGHT-TESTED !!!
+# !!! STARTER VALUES, NOT FLIGHT-TESTED !!!
 # - Load with the PROPS OFF. Verify every motor's position and spin direction on the
 #   Motor Test page before fitting props.
-# - AHRS_ORIENTATION, accel calibration and level trim are done for FIXED-WING attitude
+# - AHRS_ORIENTATION, accel calibration and level trim are done in the FIXED-WING attitude
 #   (nose horizontal, canards level). See software/SETUP.md.
-# - Tune in QSTABILIZE/QHOVER first, then QLOITER, then try transitions at a safe altitude.
+# - Tune in QSTABILIZE/QHOVER first, then QLOITER, then transitions at a safe altitude,
+#   then raise speed in steps (25 -> 35 -> 45 -> 56 m/s) while watching for oscillation.
 #
 # Load order: set Q_ENABLE=1, write, REBOOT, refresh params, then load this whole file.
 
@@ -15,12 +17,29 @@
 Q_ENABLE,1
 Q_FRAME_CLASS,1
 Q_FRAME_TYPE,1
-# 2 = copter tail-sitter without control surfaces (forces Q-assist; Q_TAILSIT_MOTMX ignored)
+# 2 = copter tail-sitter without control surfaces
 Q_TAILSIT_ENABLE,2
 # nose-down pitch (deg) at which the forward transition is complete
 Q_TAILSIT_ANGLE,45
-ARSPD_TYPE,0
+
+# ---------- Airspeed sensor (Matek ASPD-4525, MS4525DO on I2C) ----------
+# Keep ARSPD_USE,0 until the sensor reads sensibly (blow on the pitot, check the HUD),
+# then set it to 1. Check ARSPD_BUS against the I2C bus used on your board.
+ARSPD_TYPE,1
 ARSPD_USE,0
+AIRSPEED_MIN,18
+AIRSPEED_CRUISE,30
+AIRSPEED_MAX,56
+
+# ---------- High-speed gain scaling (tail-sitter) ----------
+# Motor-only control gets far more sensitive as speed rises. Disk-theory scaling (bit 2)
+# estimates the airflow over the props from thrust + airspeed and scales gains down.
+# Q_TAILSIT_DSKLD = all-up mass (kg) / total prop disk area (m^2):
+#   about 1.2 kg / (4 x pi x 0.0889^2 = 0.0993 m^2) = about 12. Recompute with your real weight.
+Q_TAILSIT_GSCMSK,4
+Q_TAILSIT_DSKLD,12
+Q_TAILSIT_GSCMIN,0.3
+Q_TAILSIT_GSCMAX,2
 
 # ---------- Motors: Tekko32 4-in-1, DShot600, BLHeli_32 ----------
 Q_M_PWM_TYPE,6
@@ -32,7 +51,8 @@ SERVO_BLH_AUTO,1
 SERVO_DSHOT_ESC,1
 Q_M_SPIN_ARM,0.08
 Q_M_SPIN_MIN,0.12
-Q_M_THST_HOVER,0.30
+# high-pitch props hover at a higher throttle than 7x4s
+Q_M_THST_HOVER,0.35
 
 # ---------- Serial ports (KakuteH7 hwdef) ----------
 # SERIAL3 = UART3 -> Holybro Micro M10 GPS

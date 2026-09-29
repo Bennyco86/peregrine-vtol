@@ -14,7 +14,7 @@ Every piece of software here is open source or free, and none of it is written f
 
 1. Hold the Kakute H7 boot button, plug in USB-C, and flash **ArduPlane stable** for board `KakuteH7`. Use Mission Planner (*Install Firmware*) or the ArduPilot firmware server.
 2. Connect, set `Q_ENABLE = 1`, write, then **reboot**.
-3. Load `ardupilot/rocket-vtol-kakuteh7.param` (*Config → Full Parameter List → Load from file*), write, then reboot again.
+3. Load `ardupilot/karearea-kakuteh7.param` (*Config → Full Parameter List → Load from file*), write, then reboot again.
 
 ## 2. Orientation and calibration: do these in the FIXED-WING attitude
 
@@ -46,5 +46,7 @@ ArduPilot treats forward flight as the "normal" attitude for a tail-sitter. Lay 
 2. Tethered or low hover in `QSTABILIZE`, then run QuadPlane autotune (`QAUTOTUNE`) in hover.
 3. `QLOITER` once GPS and the compass are healthy.
 4. Only after a stable hover: transition at 30 m+ in `FBWA`, with a quick switch back to `QHOVER`.
+
+5. **Going fast (target 200 km/h / 56 m/s):** fit the airspeed sensor and calibrate it before trusting it (`ARSPD_USE = 1` only after the HUD reads sensibly). Recompute `Q_TAILSIT_DSKLD` from your real all-up weight. Raise speed in steps (25 → 35 → 45 → 56 m/s). If it oscillates at speed, lower `Q_TAILSIT_GSCMIN`. Swap 7×5 props for 7×6 only once hover and transitions are solid.
 
 Always follow your local aviation rules (registration, line-of-sight/FPV spotter rules, no-fly zones).

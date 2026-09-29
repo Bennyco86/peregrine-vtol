@@ -1,8 +1,8 @@
-# Kārearea: open-source VTOL FPV tail-sitter
+# Peregrine: open-source VTOL FPV tail-sitter
 
-![Kārearea, exterior](images/01-exterior-trimetric.png)
+![Peregrine, exterior](images/01-exterior-trimetric.png)
 
-**Kārearea** (the New Zealand falcon) is a hobby **VTOL tail-sitter**. It stands on its four wing-tip spikes, takes off and hovers like a quadcopter, then pitches nose-forward and flies on its wings. It uses four motors and no control surfaces. **Design target: 200 km/h (56 m/s) in forward flight.**
+**Peregrine** (named after the peregrine falcon, the fastest animal on Earth) is a hobby **VTOL tail-sitter**. It stands on its four wing-tip spikes, takes off and hovers like a quadcopter, then pitches nose-forward and flies on its wings. It uses four motors and no control surfaces. **Design target: 200 km/h (56 m/s) in forward flight.**
 
 The shape is inspired by the new Ukrainian interceptor drone, but this is an original design built as an **open-source FPV project**. Every part was modelled from scratch with **Claude Code (Opus 5.5)** driving the CAD (AI-to-CAD).
 

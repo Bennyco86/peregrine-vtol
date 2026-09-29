@@ -1,4 +1,4 @@
-# Kārearea VTOL tail-sitter: ArduPlane starter parameters
+# Peregrine VTOL tail-sitter: ArduPlane starter parameters
 # Target firmware: ArduPlane 4.5.x or newer, board "KakuteH7" (Holybro Kakute H7 v1.3+)
 # Airframe: copter tail-sitter (4 motors, no control surfaces), 6S, 7" props (5-6" pitch)
 # Design goal: 200 km/h (about 56 m/s) in forward flight

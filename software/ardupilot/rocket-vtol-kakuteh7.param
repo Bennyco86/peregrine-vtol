@@ -1,0 +1,63 @@
+# Rocket VTOL FPV — ArduPlane starter parameters
+# Target firmware: ArduPlane 4.5.x or newer, board "KakuteH7" (Holybro Kakute H7 v1.3)
+# Airframe: copter tail-sitter (4 motors, no control surfaces), 6S, 7" props
+#
+# !!! STARTER VALUES — NOT FLIGHT-TESTED !!!
+# - Load with the PROPS OFF. Verify every motor's position and spin direction on the
+#   Motor Test page before fitting props.
+# - AHRS_ORIENTATION, accel calibration and level trim are done for FIXED-WING attitude
+#   (nose horizontal, canards level). See software/SETUP.md.
+# - Tune in QSTABILIZE/QHOVER first, then QLOITER, then try transitions at a safe altitude.
+#
+# Load order: set Q_ENABLE=1, write, REBOOT, refresh params, then load this whole file.
+
+# ---------- QuadPlane / motor-only tail-sitter ----------
+Q_ENABLE,1
+Q_FRAME_CLASS,1
+Q_FRAME_TYPE,1
+# 2 = copter tail-sitter without control surfaces (forces Q-assist; Q_TAILSIT_MOTMX ignored)
+Q_TAILSIT_ENABLE,2
+# nose-down pitch (deg) at which the forward transition is complete
+Q_TAILSIT_ANGLE,45
+ARSPD_TYPE,0
+ARSPD_USE,0
+
+# ---------- Motors: Tekko32 4-in-1, DShot600, BLHeli_32 ----------
+Q_M_PWM_TYPE,6
+SERVO1_FUNCTION,33
+SERVO2_FUNCTION,34
+SERVO3_FUNCTION,35
+SERVO4_FUNCTION,36
+SERVO_BLH_AUTO,1
+SERVO_DSHOT_ESC,1
+Q_M_SPIN_ARM,0.08
+Q_M_SPIN_MIN,0.12
+Q_M_THST_HOVER,0.30
+
+# ---------- Serial ports (KakuteH7 hwdef) ----------
+# SERIAL3 = UART3 -> Holybro Micro M10 GPS
+SERIAL3_PROTOCOL,5
+GPS_TYPE,2
+# SERIAL6 = UART6 (R6/T6 pads) -> ExpressLRS receiver (CRSF)
+SERIAL6_PROTOCOL,23
+RSSI_TYPE,3
+# SERIAL7 = UART7 (R7 pin on the ESC connector) -> ESC telemetry
+SERIAL7_PROTOCOL,16
+SERVO_BLH_TRATE,10
+# SERIAL1 = UART1 (T1/R1) -> HDZero Freestyle V2 VTX, MSP DisplayPort OSD
+# Check which UART your VTX connector uses on the silkscreen and move this block to match.
+SERIAL1_PROTOCOL,42
+SERIAL1_BAUD,115
+OSD_TYPE,5
+MSP_OPTIONS,0
+OSD1_TXT_RES,1
+
+# ---------- Battery (Tekko32 current sensor via the ESC connector) ----------
+BATT_MONITOR,4
+BATT_CAPACITY,2200
+BATT_LOW_VOLT,21.0
+BATT_CRT_VOLT,19.8
+
+# ---------- Failsafes ----------
+THR_FAILSAFE,1
+FS_LONG_ACTN,1

@@ -1,0 +1,10 @@
+# Vendor CAD is not redistributable
+Vendor CAD/
+# Temp files
+~$*
+*.bak
+# OS
+Thumbs.db
+desktop.ini
+# Local agent handover (machine-specific paths)
+HANDOVER.md

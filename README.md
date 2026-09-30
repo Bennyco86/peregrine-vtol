@@ -4,9 +4,9 @@
 
 **Peregrine** (named after the peregrine falcon, the fastest animal on Earth) is a hobby **VTOL tail-sitter**. It stands on its four wing-tip spikes, takes off and hovers like a quadcopter, then pitches nose-forward and flies on its wings. It uses four motors and no control surfaces. **Design target: 200 km/h (56 m/s) in forward flight.**
 
-The shape is inspired by the new Ukrainian interceptor drone, but this is an original design built as an **open-source FPV project**. Every part was modelled from scratch with **Claude Code (Opus 5.5)** driving the CAD (AI-to-CAD).
+I used **Claude Opus 5.5** and CAD to design it from a photo of the new Ukrainian interceptor drone, then gave it my own twist: it is built around **hobbyist components that are easy to find**. It is shared as an **open-source FPV project**.
 
-> **Scope:** airframe and flight electronics only. There are **no payload provisions**, and none should be added. Fly it within your local aviation rules.
+> Fly it within your local aviation rules.
 
 ## What's in the repo
 
@@ -17,7 +17,7 @@ The shape is inspired by the new Ukrainian interceptor drone, but this is an ori
 | [`docs/WIRING.md`](docs/WIRING.md) | Every cable, connector, pad and route |
 | [`software/SETUP.md`](software/SETUP.md) | Flashing ArduPilot, calibration, radio, OSD, first flights |
 | [`software/ardupilot/`](software/ardupilot) | ArduPlane parameter file for the Kakute H7 (QuadPlane tail-sitter, airspeed sensor, high-speed gain scaling) |
-| [`images/`](images) | Renders and CFD (airflow simulation) results |
+| [`images/`](images) | CAD renders (exterior, x-ray, wiring) and CFD (airflow simulation) results |
 
 ## Key numbers
 
@@ -28,7 +28,7 @@ The shape is inspired by the new Ukrainian interceptor drone, but this is an ori
 | Body | Ø100 mm tube, ogive nose, 2 swept canards, 4 aerofoil wings (NACA 00xx) |
 | Power | 4 × 2807 1300 KV, 7″ tri-blade high-pitch props (7×5 / 7×6), 6S 2200 mAh |
 | Top speed target | 200 km/h (56 m/s), with an airspeed sensor and speed-based gain scaling |
-| Structure | Carbon tube spar in each wing (6 mm), carbon rod in each canard (2 mm), ASA / PA-CF prints |
+| Structure | 3D-printed in ASA or PA-CF |
 | Flight controller | Holybro Kakute H7 + Tekko32 F4 50A 4-in-1 |
 | Firmware | ArduPilot **ArduPlane** (`Q_TAILSIT_ENABLE = 2`, copter-motor tail-sitter) |
 | Video | HDZero Freestyle V2 + Micro V2 camera (digital, MSP OSD) |
@@ -39,7 +39,7 @@ The shape is inspired by the new Ukrainian interceptor drone, but this is an ori
 
 - **Split wings.** Each wing is a top part (leading-edge beam + motor nacelle) and a bottom part (panel), split along the seam line. The motor leads lie in a groove on the split face before the halves are pinned and glued, so nothing has to be threaded through a closed wing.
 - **Tabbed root.** The wings slide into slots in the body's aerofoil root fairings.
-- **Carbon reinforcement for 200 km/h.** A 6 mm carbon tube is glued into a channel in each wing panel (45 % chord, 100 mm long), and a 2 mm carbon rod goes into each canard from inside the body.
+- **Optional stiffener channels.** The wing panels (Ø6.2 mm) and canards (Ø2.1 mm) have empty channels in the CAD. They are not required and nothing for them is in the BOM; fill them with carbon tube/rod only if a printed part turns out too flexible.
 - **Wiring.** All wiring is modelled and colour-coded in the CAD: orange = motors, red = battery, yellow = VTX power/UART, black = video coax, blue = MIPI, cyan = GPS, green = receiver.
 
 ![x-ray](images/04-xray-60-trimetric.png)
@@ -93,6 +93,8 @@ The assembly STEP in `cad/step/` already leaves them out.
 - ⏳ First build and hover test
 - ✅ CFD at the 200 km/h target: drag 9.9 N
 - ⏳ Mass properties + measured all-up weight (sets `Q_TAILSIT_DSKLD`)
+- ⏳ Pitot tube (airspeed sensor) mount not modelled yet
+- ⏳ Real build photos (current images are CAD renders)
 
 ## Licence
 

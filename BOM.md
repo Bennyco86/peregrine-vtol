@@ -13,13 +13,13 @@ Links point to AliExpress where a listing exists (Amazon otherwise). Listings ch
 | Flight electronics (#1–11a) | $918 |
 | Wiring consumables (#12–17) | $39 |
 | Filament (ASA, 1 kg spool) | $44 |
-| Hardware and carbon reinforcement (#24–30) | $35 |
-| **Aircraft total** | **≈ $1,036** |
+| Hardware (#24–30) | $19 |
+| **Aircraft total** | **≈ $1,020** |
 | Spare battery (strongly recommended) | $53 |
 | Ground: radio + HDZero BoxPro+ goggles + charger | $841 |
-| **Total to fly, with nothing already owned** | **≈ $1,930** |
+| **Total to fly, with nothing already owned** | **≈ $1,914** |
 
-If you already own a radio, goggles and a charger, the aircraft alone is about **NZ$1,040**.
+If you already own a radio, goggles and a charger, the aircraft alone is about **NZ$1,020**.
 
 Model column: **CAD** = vendor STEP used in the assembly (not redistributed, see the README) · **ENV** = envelope modelled from the datasheet · **OWN** = designed in this project
 
@@ -59,12 +59,12 @@ For 200 km/h, print the wings and canards in **ASA or carbon-fibre nylon (PA-CF)
 
 | # | Qty | File | Notes |
 |---|-----|------|-------|
-| 18 | 1 | `Body` | Ø100 mm tube, 4 aerofoil root fairings with tab slots, 2 swept canards (each with a Ø2.1 mm rod channel), tray rails |
+| 18 | 1 | `Body` | Ø100 mm tube, 4 aerofoil root fairings with tab slots, 2 swept canards |
 | 19 | 1 | `Nose Cone` | Ogive nose with the camera cradle and the GPS mount (screws through the bulkhead) |
 | 20 | 4 | `Wing - Top Part` | Leading-edge beam + motor nacelle |
-| 21 | 4 | `Wing - Bottom Part` | Wing panel. The 6 × 6 mm motor-lead groove is on the split face; a Ø6.2 mm spar channel runs 101 mm from the root at 45 % chord. |
+| 21 | 4 | `Wing - Bottom Part` | Wing panel. The 6 × 6 mm motor-lead groove is on the split face |
 | 22 | 4 | `Spike` | Landing leg / nacelle tail cone (TPU is fine) |
-| 23 | 1 | `Avionics Tray` | Stack and VTX standoffs, battery pocket, receiver bay |
+| 23 | 1 | `Avionics Tray` | Stack and VTX standoffs, battery pocket between two ribs, slots for the lower motor-lead bundles |
 | — | — | `Arm` | Unsplit master of the wing, for editing only (not printed) |
 
 **Filament:** about 450 g in total. Budget one 1 kg spool of ASA (about NZ$44), or about NZ$80 if you print the wings and canards in PA-CF.
@@ -78,11 +78,9 @@ For 200 km/h, print the wings and canards in **ASA or carbon-fibre nylon (PA-CF)
 | 26 | 4 | M2 × 5 screws | VTX → tray | in kit | same kit |
 | 27 | 4 | M2 × 5 screws | GPS → nose bulkhead | in kit | same kit |
 | 28 | 2 | M2 × 6 screws | Camera tilt pivot | in kit | same kit |
-| 29a | 4 | **Carbon tube 6 mm OD × 100 mm** (pultruded, e.g. 6 × 4 mm) | Wing spar, one per wing, glued into the channel | $11 | [AliExpress search](https://www.aliexpress.com/w/wholesale-carbon-fiber-tube-6mm.html) |
-| 29b | 2 | **Carbon rod 2 mm × 40 mm** | Canard stiffener, pushed in from inside the body and glued | $5 | [AliExpress search](https://www.aliexpress.com/w/wholesale-carbon-fiber-rod-2mm.html) |
 | 29 | 16 | 1.75 mm filament pins, 12 mm long | Wing top ↔ bottom alignment (plus CA or epoxy) | incl. | Offcuts of your filament |
 | 30 | 1 | Battery strap, 20 mm | Battery retention | $7 | [AliExpress](https://www.aliexpress.us/item/3256809035872583.html) |
-| | | | | **$35** | |
+| | | | | **$19** | |
 
 ## Ground equipment (not on the aircraft)
 

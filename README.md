@@ -12,7 +12,7 @@ I used **Claude Opus 5.5** and CAD to design it from a photo of the new Ukrainia
 
 | Folder / file | Contents |
 |---|---|
-| [`cad/step/`](cad/step) | STEP files of every part designed here, plus the full assembly without vendor parts |
+| [`cad/step/`](cad/step) | STEP files of every part designed here, plus the full assembly without vendor parts. **Print the `Rev 2` body parts.** The assembly STEP and the renders still show the original one-piece body. |
 | [`BOM.md`](BOM.md) | Full bill of materials with purchase links, radio and goggle recommendations |
 | [`docs/WIRING.md`](docs/WIRING.md) | Every cable, connector, pad and route |
 | [`software/SETUP.md`](software/SETUP.md) | Flashing ArduPilot, calibration, radio, OSD, first flights |
@@ -31,7 +31,7 @@ I used **Claude Opus 5.5** and CAD to design it from a photo of the new Ukrainia
 | Structure | 3D-printed in ASA or PA-CF |
 | Flight controller | Holybro Kakute H7 + Tekko32 F4 50A 4-in-1 |
 | Firmware | ArduPilot **ArduPlane** (`Q_TAILSIT_ENABLE = 2`, copter-motor tail-sitter) |
-| Video | HDZero Freestyle V2 + Micro V2 camera (digital, MSP OSD) |
+| Video | HDZero Freestyle V2 + Micro V3 camera (digital, MSP OSD) |
 | RC | ExpressLRS 2.4 GHz |
 | GPS | Holybro Micro M10 in the nose |
 
@@ -39,6 +39,7 @@ I used **Claude Opus 5.5** and CAD to design it from a photo of the new Ukrainia
 
 - **Split wings.** Each wing is a top part (leading-edge beam + motor nacelle) and a bottom part (panel), split along the seam line. The motor leads lie in a groove on the split face before the halves are pinned and glued, so nothing has to be threaded through a closed wing.
 - **Tabbed root.** The wings slide into slots in the body's aerofoil root fairings.
+- **Three-piece fuselage (Rev 2), so it prints on 250 mm printers.** `Tail Cap Rev 2` (42 mm) + `Body Rev 2` (245 mm) + `Nose Cone Rev 2` (198 mm). The joints are flush twist-lock bayonets (3 lugs, about 18° twist, snap bump) set inside the wall thickness, so the bore stays clear for the tray. The tail cap is glued; the nose is left unglued as a service hatch, and a wide key lug means it only fits one way. Test-print one joint first: the fit is designed with 0.2 mm clearance.
 - **Optional stiffener channels.** The wing panels (Ø6.2 mm) and canards (Ø2.1 mm) have empty channels in the CAD. They are not required and nothing for them is in the BOM; fill them with carbon tube/rod only if a printed part turns out too flexible.
 - **Wiring.** All wiring is modelled and colour-coded in the CAD: orange = motors, red = battery, yellow = VTX power/UART, black = video coax, blue = MIPI, cyan = GPS, green = receiver.
 
@@ -82,7 +83,7 @@ Streamlines are coloured by velocity and the skin by pressure. Red marks stagnat
 The assembly uses vendor models that are **not redistributed** here: HDZero CAD is CC BY-NC, and Holybro's terms are unknown. Download them yourself if you want the complete assembly:
 
 - Holybro Kakute H7 / Tekko32 stack and Micro M10 GPS: [holybro.com](https://holybro.com) (product pages → downloads)
-- HDZero Freestyle V2 VTX, antenna and Micro V2 camera: [docs.hd-zero.com](https://docs.hd-zero.com/freestyle-v2)
+- HDZero Freestyle V2 VTX, antenna and Micro V2 camera (the model used in the CAD; buy the current Micro V3): [docs.hd-zero.com](https://docs.hd-zero.com/freestyle-v2)
 
 The assembly STEP in `cad/step/` already leaves them out.
 

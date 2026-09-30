@@ -60,7 +60,8 @@ For 200 km/h, print the wings and canards in **ASA or carbon-fibre nylon (PA-CF)
 | # | Qty | File | Notes |
 |---|-----|------|-------|
 | 18 | 1 | `Body Rev 2` | Ø100 mm tube, 4 aerofoil root fairings with tab slots, 2 swept canards, tray rails. **245 mm tall, so it fits 250 mm printers.** Bayonet sockets at both ends. |
-| 19 | 1 | `Nose Cone Rev 2` | Ogive nose with the camera cradle and GPS mount, extended down to take the forward tube (198 mm tall). **Twist-lock bayonet with a snap: do not glue**, it is the service hatch. A wide key lug means it fits only one way. |
+| 19 | 1 | `Nose Cone Rev 2` | Ogive nose with the bulkhead, camera cradle and GPS mount, extended down to take the forward tube. **Twist-lock bayonet with a snap onto the body: do not glue**, it is the service hatch. A wide key lug means it fits only one way. It has a threaded collar (2.5 mm pitch) around the camera. |
+| 19b | 1 | `Nose Tip Rev 2` | The front of the nose around the camera, with the lens window. **Screws onto the threaded collar** (about 2.5 turns). Unscrew it to fit the camera and reach the pivot and GPS screws. |
 | 19a | 1 | `Tail Cap Rev 2` | Tapered tail end with the antenna hole (42 mm tall). Twist-lock bayonet with a snap, **glued** once the wiring is in (glue groove on the ring). |
 | 20 | 4 | `Wing - Top Part` | Leading-edge beam + motor nacelle |
 | 21 | 4 | `Wing - Bottom Part` | Wing panel. The 6 × 6 mm motor-lead groove is on the split face |

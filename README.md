@@ -6,6 +6,8 @@
 
 I used **Claude Opus 5.5** and CAD to design it from a photo of the new Ukrainian interceptor drone, then gave it my own twist: it is built around **hobbyist components that are easy to find**. It is shared as an **open-source FPV project**.
 
+> **Smaller sibling:** [Peregrine Mini](https://github.com/Bennyco86/peregrine-mini-vtol) is a 5-inch version that prints in three pieces on a 256 mm printer.
+
 > Fly it within your local aviation rules.
 
 ## What's in the repo
